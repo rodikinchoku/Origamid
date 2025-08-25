@@ -1,0 +1,75 @@
+.question {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.question h2 {
+  margin-bottom: 60px;
+}
+
+.question dl > div {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.question dl > div:nth-child(odd) {
+  background-color: var(--color-1);
+}
+
+.question button {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.question button::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--color-p1);
+}
+
+.question button::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: url("../../img/icones/seta-abrir.svg");
+  transition: 0.3s;
+}
+
+.question button:hover::after,
+.question button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.js .question dd {
+  display: none;
+}
+
+.js .question dd.active {
+  display: block;
+}
+
+.question dd {
+  padding-left: 20px;
+  margin-top: 16px;
+  max-width: 80ch;
+}
+
+@media (max-width: 800px) {
+  .question {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .question h2 {
+    margin-bottom: 40px;
+  }
+}
